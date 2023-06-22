@@ -1,10 +1,15 @@
-
 {
     "manifest_version": 3,
     "name": "At Sign Remover",
     "version": "1.0",
     "description": "Remove the '@' from youtube comments.",
   
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "atsign@gmail.com"
+      }
+    },
+
     "icons": {
       "16": "images/icon-16.png",
       "32": "images/icon-32.png",
@@ -18,7 +23,7 @@
       {
         "js": ["scripts/content.js"],
         "matches": [
-          "https://www.youtube.com/*"          
+          "https://www.youtube.com/*"
         ]
       }
     ]

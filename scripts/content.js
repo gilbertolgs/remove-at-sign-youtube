@@ -1,7 +1,7 @@
 function removeAtSign(addedNode) {
   const authorLink = addedNode.querySelector('a#author-text');
   const authorName = authorLink.firstElementChild;
-  authorName.innerHTML = authorName.innerHTML.replace("@", "");
+  authorName.innerText = authorName.innerText.replace("@", "");
 }
 
 function observeComments(element) {
