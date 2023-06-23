@@ -1,7 +1,13 @@
 function removeAtSign(addedNode) {
-  const authorLink = addedNode.querySelector('a#author-text');
-  const authorName = authorLink.firstElementChild;
-  authorName.innerText = authorName.innerText.replace("@", "");
+  const authorName = addedNode.querySelector('a#author-text').firstElementChild;
+  const creatorName = addedNode.querySelector('yt-formatted-string#text');
+  
+  if(creatorName){
+    creatorName.innerText = creatorName.innerText.replace("@", "");  
+  }
+  if(authorName){
+    authorName.innerText = authorName.innerText.replace("@", "");
+  }
 }
 
 function observeComments(element) {
@@ -9,7 +15,7 @@ function observeComments(element) {
     for (let mutation of mutations) {
       for (let addedNode of mutation.addedNodes) {
         //Removes '@' in commentor name
-        if (addedNode.nodeName === "YTD-COMMENT-THREAD-RENDERER" || addedNode.nodeName === "YTD-COMMENT-RENDERER") {
+        if (addedNode.nodeName === "YTD-COMMENT-RENDERER") {
           removeAtSign(addedNode);
         }
         //if it is a comment thread calls observer for replies
