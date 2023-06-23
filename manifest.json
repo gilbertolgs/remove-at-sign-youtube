@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "At Sign Remover",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Remove the '@' from youtube comments.",
   
     "browser_specific_settings": {
